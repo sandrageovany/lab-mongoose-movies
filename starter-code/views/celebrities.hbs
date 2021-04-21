@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Celebrities</h2>
+    {{#each celebrities}}
+    <div class="row">
+        <div class="col-md-12">
+            <h5> {{name}} </h5>
+            <p> Occupation: {{occupation}}</p>
+            <p> Catch Phrase: {{catchPhrase}}</p>
+            <p> movie: {{movie.title}}</p>
+        </div>
+        <div class="col-md-4">
+            <a href="/celebrities/{{id}}/edit" class="btn btn-primary"> Edit</a>
+        </div>
+        <div class="col-md-4">
+            <form action="/celebrities/{{id}}/delete" method="POST">
+                <button class="btn " type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+    <a href="/celebrities/create" class="btn btn-primary">Create</a>
+</div>
